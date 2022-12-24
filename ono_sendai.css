@@ -2013,6 +2013,21 @@
     font-size:13px;
     display:inline;
   }
+
+  .cm-inline-code{
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  .cm-s-obsidian span.cm-inline-code {
+    color: var(--accent-strong);
+    font-size: var(--code-size);
+    background-color: transparent;
+    vertical-align: baseline;
+  }
   
   /*=============== FOCUS MODE by death_au + transparency mod ================*/
   .cm-s-obsidian div:not(.CodeMirror-activeline) > pre.CodeMirror-line,
@@ -2045,7 +2060,20 @@
   .CodeMirror-activeline {
     opacity:1;
   } 
+
+  .cm-keyword{
+    color: rgba(198, 92, 255, 0.932);
+  }
+
+  .cm-def{
+    color: rgba(255, 255, 255, 0.932);
+  }
   
+  .cm-string{
+    color: rgba(0, 255, 17, 0.932);
+  }
+  
+
   /*=============== add mods below ================*/
   /*=============== add mods below ================*/
   
