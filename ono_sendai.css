@@ -13,7 +13,11 @@
     font-size: 13px;
     font-family: Fira Code, Source Code Pro, monospace;
   }
-  
+
+  * {
+    box-sizing: content-box;
+  }
+ 
   /* ======= DARK ==============*/
   
   .theme-dark {
@@ -27,6 +31,7 @@
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.5);
     --text-accent: #28b0ff;
     --text-accent2: #00ff37;
+    --text-accent3: #086ca6;
     --text-accent-hover: #77d47c;
     --text-normal: #dcddde;
     --text-muted:#898b85;
@@ -497,6 +502,7 @@
   .nav-action-button > svg {
     width: 14px;
     height: 14px;
+    box-sizing: 14px;
   }
   
   .nav-action-button {
@@ -517,8 +523,8 @@
     margin-bottom: 15px;
   }
   .workspace-tab-header.is-active {
-    background-color: var(--background-secondary-alt);
-    color: var(--text-normal);
+    background-color: var(--text-accent3);
+    color: var(--text-accent3);
   }
   
   div[aria-label="Insert template"] {
@@ -1336,10 +1342,21 @@
     height: 40px;
     padding-right: 0px;
   }
+
+  .workspace-tab-header-container-inner{
+    box-sizing: content-size;
+  }
+
+  .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: 5px;
+}
+
   .workspace-tab-header-inner {
-    padding: 0px 0px;
-    height: 100%;
-    display: flex;
+  
+  }
+
+  .workspace-tab-header.is-active {
+    border: 1px solid var(--text-accent);
   }
   
   div[aria-label="文件管理器"],
@@ -1353,15 +1370,16 @@
   }
   /*========  replace icons in tab header with text =========*/
   div[aria-label="文件管理器"] .workspace-tab-header-inner-icon,
-  div[aria-label="File explorer"] .workspace-tab-header-inner-icon {
+  div[aria-label="Files"] .workspace-tab-header-inner-icon {
     display: none;
   }
   div[aria-label="文件管理器"] .workspace-tab-header-inner:after,
-  div[aria-label="File explorer"] .workspace-tab-header-inner:after {
+  div[aria-label="Files"] .workspace-tab-header-inner:after {
     content: "FILES";
     font-size:12px;
     font-weight: 700;
-    margin-left:8px;
+    color: white;
+    /* background-color: transparent; */
   }
   
   div[aria-label="搜索"] .workspace-tab-header-inner-icon,
@@ -1373,7 +1391,6 @@
     content: "SEARCH";
     font-size:12px;
     font-weight: 700;
-    margin-left:8px;
   }
   div[aria-label="星标"] .workspace-tab-header-inner-icon, 
   div[aria-label="Starred"] .workspace-tab-header-inner-icon {
@@ -1384,7 +1401,6 @@
     content: "STAR";
     font-size:12px;
     font-weight: 700;
-    margin-left:8px;
   }
   
   .workspace-tab-container-before.is-before-active,
@@ -1407,20 +1423,18 @@
     overflow: auto;
   } 
   .workspace-tab-header[aria-label="标签面板"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon svg,
-  .workspace-tab-header[aria-label="Tag pane"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon svg {
+  .workspace-tab-header[aria-label="Tags"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon svg {
     display: none;
   }
   
   .workspace-tab-header[aria-label="标签面板"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon::before,
-  .workspace-tab-header[aria-label="Tag pane"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon::before {
+  .workspace-tab-header[aria-label="Tags"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon::before {
     content: "TAGS";
     font-size: 12px;
     font-weight: 900;
     display: block;
-    top: 0px;
-    left: 5px;
     position: relative;
-    padding: 0 5px;
+    padding: 5px;
   }
   .workspace-tab-header[aria-label="标签面板"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon:hover,
   .workspace-tab-header[aria-label="Tag pane"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon:hover {
@@ -1455,7 +1469,6 @@
   .workspace-tab-header[aria-label*="大纲"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon svg,
   .workspace-tab-header[aria-label^="Outline"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon svg {
     display: none;
-    color:red;
   }
   .workspace-tab-header[aria-label*="大纲"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon::before,
   .workspace-tab-header[aria-label^="Outline"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon::before {
@@ -1463,11 +1476,10 @@
     font-size: 12px;
     font-weight: 900;
     display: block;
-    top: 0px;
-    left: 5px;
     position: relative;
-    padding: 0px;
+    padding: 5px;
   }
+
   .workspace-tab-header[aria-label*="大纲"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon:hover,
   .workspace-tab-header[aria-label^="Outline"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon:hover {
     color :red;
@@ -1505,7 +1517,6 @@
   .workspace-tab-header[aria-label*="反向链接"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon svg,
   .workspace-tab-header[aria-label^="Backlinks"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon svg {
     display: none;
-    color:red;
   }
   .workspace-tab-header[aria-label*="反向链接"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon::before,
   .workspace-tab-header[aria-label^="Backlinks"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon::before {
@@ -1513,10 +1524,8 @@
     font-size: 12px;
     font-weight: 900;
     display: block;
-    top: 0px;
-    left: 5px;
     position: relative;
-    padding: 0 10px;
+    padding: 5px;
   }
   .workspace-tab-header[aria-label^="反向链接"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon:hover,
   .workspace-tab-header[aria-label^="Backlinks"] > .workspace-tab-header-inner > .workspace-tab-header-inner-icon:hover {
