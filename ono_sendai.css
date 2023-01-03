@@ -2052,6 +2052,19 @@
     opacity:0.7;
     filter: saturate(0.7);
   }
+
+  .HyperMD-codeblock{
+    border-right: 1px solid var(--text-accent);
+    border-left: 1px solid var(--text-accent);
+  }
+
+  .HyperMD-codeblock-begin-bg{
+    border-top:1px solid var(--text-accent);
+  }
+
+  .HyperMD-codeblock-end-bg{
+    border-bottom:1px solid var(--text-accent);
+  }
   
   .cm-s-obsidian div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-highlight,
   .cm-s-obsidian div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-highlight {
