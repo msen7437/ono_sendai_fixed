@@ -525,6 +525,7 @@
   .workspace-tab-header.is-active {
     background-color: var(--text-accent3);
     color: var(--text-accent3);
+    opacity: 1;
   }
   
   div[aria-label="Insert template"] {
@@ -1341,21 +1342,27 @@
     background-color: var(--background-secondary-alt);
     height: 40px;
     padding-right: 0px;
+    width: 100%
   }
 
-  .workspace-tab-header-container-inner{
-    box-sizing: content-size;
-  }
 
-  .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-    padding-right: 5px;
+  .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container:after {
+    -webkit-app-region: no-drag;
+    right: 0;
+    top: 0;
+    content: none;
 }
 
-  .workspace-tab-header-inner {
-  
+
+  .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: 0px;
   }
 
-  .workspace-tab-header.is-active {
+  .workspace-tab-header.is-active .workspace-tab-header-inner::after {
+    opacity: 1;
+  }
+
+  .workspace-tab-header.is-active{
     border: 1px solid var(--text-accent);
   }
   
@@ -1499,8 +1506,8 @@
     top: 0px;
     right: 0px;
     height: 18px;
-    width: 18px;
-    padding: 0px;
+    width: flex;
+    padding: 2px;
     margin: 0px;
     display: flex;
     align-items: center;
@@ -1511,6 +1518,32 @@
     border-radius: 3px;
     font-size: 12px;
     margin-left: 0px;
+  }
+
+  .view-header-nav-buttons{
+    box-sizing: content-box;
+
+  }
+  .clickable-icon[aria-label^="Navigate back"] > svg{
+    display: none;
+  }
+
+  .clickable-icon[aria-label^="Navigate forward"] > svg{
+    display: none;
+  }
+
+  .clickable-icon[aria-label^="Navigate back"]:before{
+    content: "<<prev";
+    font: courier;
+    color: var(--text-accent2);
+    margin-right: 2px;
+  }
+
+  .clickable-icon[aria-label^="Navigate forward"]:before{
+    content: "next>>";
+    font: courier;
+    color: var(--text-accent2);
+    margin-left: 2px;
   }
   
   /*===== backlinks pane =======*/
