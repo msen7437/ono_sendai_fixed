@@ -14,6 +14,10 @@
     font-family: Fira Code, Source Code Pro, monospace;
   }
 
+  .layer-ui__wrapper__footer{
+    margin-bottom: 50px;
+  }
+
   * {
     box-sizing: content-box;
   }
@@ -429,6 +433,13 @@
     width: 12px;
     height: 12px;
   }
+
+  .workspace-tab-header-inner-icon{
+    /* width: fit-content; */
+    box-sizing: content-box;
+    /* height: 100px; */
+  }
+
   .workspace-ribbon-collapse-btn {
     margin-top: 0px;
     padding: 0px 4px 64px 8px;
@@ -1123,9 +1134,9 @@
     z-index: var(--layer-popover);
     max-height: 780px; /* was 300 */
     min-height: 100px;
-    width: 550px;
+    width: fit-content;
     overflow: hidden;
-    padding: 0;
+    /* padding: 0; */
     border-bottom: none;
     transform: scale(0.9);
   }
@@ -1134,8 +1145,10 @@
     background-color: var(--background-secondary-alt);
     border: 1px solid var(--text-accent);
     box-shadow: 3px 3px 1px var(--text-accent);
-    border-radius: 0px;
-    padding: 15px 20px 10px 20px;
+    box-sizing: content-box;
+    /* border-radius: 0px; */
+    /* padding: 15px 20px 10px 20px; */
+    width: fit-content;
     position: relative;
     font-weight: 400;
     -webkit-text-stroke: 0.0px;
@@ -1143,6 +1156,11 @@
     color:var(--text-normal);
     overflow-y: scroll;
   }
+
+  .context-menu-option{
+    max-width: fit-content;
+  }
+
   /* --- the bottom gradient ---*/
   .popover.hover-popover:after {
     content: "";
@@ -1612,7 +1630,7 @@
   }
   .view-header-title-container {
     background-color: var(--background-secondary-alt);
-    flex-grow: 20;
+    flex-grow: 10;
     height: 20px;
     line-height: 22px;
     overflow: hidden;
